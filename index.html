@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="conversion-landing-page-wrapper">
+        <div class="content-container">
+            <h1 class="dark-text">Welcome to the Conversion Studio !</h1>
+            <p class="light-text">By converting your screenplay in several different languages, you can significantly
+                increase the
+                possibility of getting a film made on it.
+            </p>
+            <p class="light-text">In MNF Conversion Studio you can convert your screenplay written in any language into
+                114 more languages.
+            </p>
+            <p class="light-text">It's simple. Upload your screenplay, wait for a few minutes and be ready to send it to
+                many more
+                producers.</p>
+            <p class="light-text">You may even opt for dual language dialogues in which dialogues in source language and
+                destination
+                language are written side by side.</p>
+            <h2 class="dark-text">Your video are Secured by blockchain. <span class="c-green-text">MNF</span> has no
+                access to Them.</h2>
+            <input type="file" name="" id="">
+            <p class="red-text">Please upload your script in "Docx", "Fdx" format only..</p>
+            <button class="c-green-bg conversion-btn" onclick="showScreenplayPopup()">Upload on Blockchain</button>
+            <p class="light-text or-text">OR</p>
+            <button class="c-green-bg conversion-btn">Test Screenplay Conversion</button>
+        </div>
+        <div class="doodle-container">
+            <img src="conversion-doodle.png" alt="conversion doodle">
+        </div>
+    </div>
+    <div class="screenplay-popup-wrapper">
+
+        <div class="screenplay-popup">
+            <h1 class="dark-text">Customize Your Converted Screenplay</h1>
+            <div class="tabs-row">
+                <span class="mid-dark-text active-tab">Action Lines</span>
+                <span class="mid-dark-text">Dialogues</span>
+                <span class="mid-dark-text">Other Components</span>
+                <span class="mid-dark-text">Miscellaneous</span>
+                <span class="mid-dark-text">LPP Vetting</span>
+            </div>
+
+            <div class="content-row">
+                <p class="mid-dark-text" id="action-lines-updated-source-text">Source <span class="text-bold">Action Lines</span> are mainly in <span class="text-bold">ASL
+                        (ASC).</span> Convert
+                    these into:</p>
+                <select name="" id="action-lines-language-dropdown" class="screenplay-popup-dropdown"
+                    onchange="updateLanguageInActionLines()">
+                    <option value="" hidden>Choose Language</option>
+                    <option value="">ADL (ADC)</option>
+                </select>
+            </div>
+
+            <div class="content-row" id="dialogues-dropdown-container">
+                <p class="mid-dark-text" id="dialogues-updated-source-text">Source <span
+                        class="text-bold">Dialogues</span> are mainly in <span class="text-bold">GSL (GSC).</span> Convert these into:
+                </p>
+                <select name="" id="dialogues-language-dropdown" class="screenplay-popup-dropdown"
+                    onchange="updateLanguageInDialogues()">
+                    <option value="" hidden>Choose Language</option>
+                    <option value="English">English</option>
+                </select>
+                <select name="" id="dialogues-script-dropdown" class="screenplay-popup-dropdown"
+                    onchange="updateScriptInDialogues()">
+                    <option value="" hidden>Choose Script</option>
+                    <option value="Devanagari Script">Devanagari Script</option>
+                </select>
+            </div>
+
+            <div class="dialogues-wrapper" id="dialogues-content-wrapper">
+                <h2>Please uncheck the boxes below for the Language (Script) combinations which you do not want to convert:</h2>
+
+                <section>
+                    <p class="light-text">Convert full Dialogues in <span class="text-bold">GDL (GDC)</span> into : </p>
+                    <div class="checkbox-label-container">
+                        <article>
+                            <input type="checkbox" name="" id="gdl-1" checked>
+                            <label for="gdl-1">GDL</label>
+                        </article>
+                        <article>
+                            <input type="checkbox" name="" id="gdc-1" checked>
+                            <label for="gdc-1">GDC</label>
+                        </article>
+                    </div>
+                </section>
+
+                <section>
+                    <p class="light-text">Convert full Dialogues in <span class="text-bold">GDL (ADC)</span> into : </p>
+                    <div class="checkbox-label-container">
+                        <article>
+                            <input type="checkbox" name="" id="gdl-2" checked>
+                            <label for="gdl-2">GDL</label>
+                        </article>
+                        <article>
+                            <input type="checkbox" name="" id="gdc-2" checked>
+                            <label for="gdc-2">GDC</label>
+                        </article>
+                    </div>
+                </section>
+
+                <section>
+                    <p class="light-text">Convert full Dialogues in <span class="text-bold">ASL (GDC)</span> into : </p>
+                    <div class="checkbox-label-container">
+                        <article>
+                            <input type="checkbox" name="" id="gdl-3" checked>
+                            <label for="gdl-3">GDL</label>
+                        </article>
+                        <article>
+                            <input type="checkbox" name="" id="gdc-3" checked>
+                            <label for="gdc-3">GDC</label>
+                        </article>
+                    </div>
+                </section>
+
+                <section>
+                    <p class="light-text">Convert full Dialogues in <span class="text-bold">ASL (ADC)</span> into : </p>
+                    <div class="checkbox-label-container">
+                        <article>
+                            <input type="checkbox" name="" id="gdl-4" checked>
+                            <label for="gdl-4">GDL</label>
+                        </article>
+                        <article>
+                            <input type="checkbox" name="" id="gdc-4" checked>
+                            <label for="gdc-4">GDC</label>
+                        </article>
+                    </div>
+                </section>
+
+                <section>
+                    <p class="light-text">Convert full Dialogues in <span class="text-bold">ADL (GDC)</span> into : </p>
+                    <div class="checkbox-label-container">
+                        <article>
+                            <input type="checkbox" name="" id="gdl-5" checked>
+                            <label for="gdl-5">GDL</label>
+                        </article>
+                        <article>
+                            <input type="checkbox" name="" id="gdc-5" checked>
+                            <label for="gdc-5">GDC</label>
+                        </article>
+                    </div>
+                </section>
+
+                <section>
+                    <p class="light-text">Convert full Dialogues in <span class="text-bold">ADL (ADC)</span> into : </p>
+                    <div class="checkbox-label-container">
+                        <article>
+                            <input type="checkbox" name="" id="gdl-6" checked>
+                            <label for="gdl-6">GDL</label>
+                        </article>
+                        <article>
+                            <input type="checkbox" name="" id="gdc-6" checked>
+                            <label for="gdc-6">GDC</label>
+                        </article>
+                    </div>
+                </section>
+
+                <section>
+                    <p class="light-text">Convert full Dialogues in <span class="text-bold">Other Languages</span> into : </p>
+                    <div class="checkbox-label-container">
+                        <article>
+                            <input type="checkbox" name="" id="gdl-7" checked>
+                            <label for="gdl-7">GDL</label>
+                        </article>
+                        <article>
+                            <input type="checkbox" name="" id="gdc-7" checked>
+                            <label for="gdc-7">GDC</label>
+                        </article>
+                    </div>
+                </section>
+
+                <button onclick="wantConvert();" class="c-green-bg conversion-btn">Continue</button>
+            </div>
+
+            <div class="dialogues-wrapper display_none" id="dialogues-content-wrapper2">
+                <h2>Please uncheck the boxes below for the Language (Script) combinations which you do not want to convert:</h2>
+
+                <section>
+                    <p class="light-text">Convert Words/Sentences in <span class="text-bold">GDL(GDC)</span> into : </p>
+                    <div class="checkbox-label-container">
+                        <article>
+                            <input type="checkbox" name="" id="ws-gdl-1" checked>
+                            <label for="ws-gdl-1">GDL</label>
+                        </article>
+                        <article>
+                            <input type="checkbox" name="" id="ws-gdc-1" checked>
+                            <label for="ws-gdc-1">GDC</label>
+                        </article>
+                    </div>
+                </section>
+
+                <section>
+                    <p class="light-text">Convert Words/Sentences in <span class="text-bold">GDL(ADC)</span> into : </p>
+                    <div class="checkbox-label-container">
+                        <article>
+                            <input type="checkbox" name="" id="ws-gdl-2" checked>
+                            <label for="ws-gdl-2">GDL</label>
+                        </article>
+                        <article>
+                            <input type="checkbox" name="" id="ws-gdc-2" checked>
+                            <label for="ws-gdc-2">GDC</label>
+                        </article>
+                    </div>
+                </section>
+
+                <section>
+                    <p class="light-text">Convert Words/Sentences in <span class="text-bold">ASL(GDC)</span> into : </p>
+                    <div class="checkbox-label-container">
+                        <article>
+                            <input type="checkbox" name="" id="ws-gdl-3" checked>
+                            <label for="ws-gdl-3">GDL</label>
+                        </article>
+                        <article>
+                            <input type="checkbox" name="" id="ws-gdc-3" checked>
+                            <label for="ws-gdc-3">GDC</label>
+                        </article>
+                    </div>
+                </section>
+
+                <section>
+                    <p class="light-text">Convert Words/Sentences in <span class="text-bold">ASL(ADC)</span> into : </p>
+                    <div class="checkbox-label-container">
+                        <article>
+                            <input type="checkbox" name="" id="ws-gdl-4" checked>
+                            <label for="ws-gdl-4">GDL</label>
+                        </article>
+                        <article>
+                            <input type="checkbox" name="" id="ws-gdc-4" checked>
+                            <label for="ws-gdc-4">GDC</label>
+                        </article>
+                    </div>
+                </section>
+
+                <section>
+                    <p class="light-text">Convert Words/Sentences in <span class="text-bold">ADL(GDC)</span> into : </p>
+                    <div class="checkbox-label-container">
+                        <article>
+                            <input type="checkbox" name="" id="ws-gdl-5" checked>
+                            <label for="ws-gdl-5">GDL</label>
+                        </article>
+                        <article>
+                            <input type="checkbox" name="" id="ws-gdc-5" checked>
+                            <label for="ws-gdc-5">GDC</label>
+                        </article>
+                    </div>
+                </section>
+
+                <section>
+                    <p class="light-text">Convert Words/Sentences in <span class="text-bold">ADL(ADC)</span> into : </p>
+                    <div class="checkbox-label-container">
+                        <article>
+                            <input type="checkbox" name="" id="ws-gdl-6" checked>
+                            <label for="ws-gdl-6">GDL</label>
+                        </article>
+                        <article>
+                            <input type="checkbox" name="" id="ws-gdc-6" checked>
+                            <label for="ws-gdc-6">GDC</label>
+                        </article>
+                    </div>
+                </section>
+
+                <section>
+                    <p class="light-text">Convert Words/Sentences in <span class="text-bold">Other Languages</span> into : </p>
+                    <div class="checkbox-label-container">
+                        <article>
+                            <input type="checkbox" name="" id="ws-gdl-7" checked>
+                            <label for="ws-gdl-7">GDL</label>
+                        </article>
+                        <article>
+                            <input type="checkbox" name="" id="ws-gdc-7" checked>
+                            <label for="ws-gdc-7">GDC</label>
+                        </article>
+                    </div>
+                </section>
+
+                <div class="">
+                    <article>
+                        <input type="checkbox" name="" id="dual_dialogues" >
+                        <label for="dual_dialogues">Provide Dual Dialogues</label>
+                    </article>
+                </div>
+
+                <button onclick="wantTextConvert();" class="c-green-bg conversion-btn">Continue</button>
+
+                <div id="choose-language-section" class="display_none">
+                    <label for="choose-language">Format of Left Dialogue</label>
+                    <select id="choose-language">
+                        <option >Choose Language</option>
+                        <option value="gdl">GDL</option>
+                        <option value="gdc">GDC</option>
+                    </select>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div class="screenplay-doodle">
+            <img src="conversion-doodle.png" alt="">
+        </div>
+
+    </div>
+</body>
+
+</html>
